@@ -1,0 +1,18 @@
+- Desarrollo para la primera tarea de la clase de Estructura de datos
+- Tarea: Generador de contraseñas
+- Por: Walter Chamorro - 61411426
+- Lenguaje usado: Python
+- Explicación del código
+- Linea: 3. Importar librería random para generar números al azar
+- 5 y 6. Declaración de variables para el longitud de la contraseña y almacenar la contraseña generada
+- 8. Función para validar si el carcater esta repetido o no
+-   9. Un ciclo para recorrer la cadena de caracteres
+-   10. Comparo si el carcater de la cadena es igual al caracter recibido por la función
+-   11. Retorno false si el caracter es igual, o sea si ya existe en la cadena recibida
+-   12. Retorno verdadero si el caracter no existe en la cadena
+- 14. Ciclo que se ejecuta hasta que la cadena tiene 15 caracteres
+- 15. Genero número al azar entre 33 y 125 según requisito de la tarea
+- 16. Obtengo el caracter ASCII del número al azar
+- 17. Valido si no esta repetido
+- 18. Sino existe en la contraseña lo agrego a la variable contrasena
+- 19. Imprimo un mensaje y la contraseña generada 
