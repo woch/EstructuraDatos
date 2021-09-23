@@ -2,10 +2,9 @@
 <html lang="en">
     <?php
 
-        $Datos = str_getcsv('1, 3, 2, 3, 5, 0');
+       // $Datos = str_getcsv('1, 3, 2, 3, 5, 0');
         $Contador = 0;
        
-
         function ExisteEnArray($valor, $array) {
 
             foreach ($array as $comparar) {
@@ -15,20 +14,18 @@
             }
             return false;
         }
-
-
-        for ($i=0; $i < count($Datos); $i++) {
-            $Valor = $Datos[$i] + 1;
-
-            if(ExisteEnArray($Valor, $Datos)){
-                $Contador ++;
-            }
-        }
-
-
     
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
             $Registro = $_POST['Registro'];
+            $Datos = str_getcsv( $Registro);
+
+            for ($i=0; $i < count($Datos); $i++) {
+                $Valor = $Datos[$i] + 1;
+    
+                if(ExisteEnArray($Valor, $Datos)){
+                    $Contador ++;
+                }
+            }
         }
     ?>
 <head>
@@ -42,15 +39,15 @@
     <form action="#" method="post" enctype="multipart/form-data">
 
     <label for="fname">Ingrese un arreglo separado por coma</label><br>
-        <input type="text" id="Registro" name="Registro" placeholder="1, 2, 3"><br>
+        <input type="text" id="Registro" name="Registro" value="1, 2, 3"><br>
         <input name="Agregar" type="submit" value="Agregar" class="submit">
     </form>
 
     <?php if(count($Datos) > 0){ ?>
         <h3>Valores ingresados</h3>
         <ul>
-            <?php for ($i=0; $i < count($ops); $i++) {
-                echo "<li>".$ops[$i]."</li>";
+            <?php for ($i=0; $i < count($Datos); $i++) {
+                echo "<li>".$Datos[$i]."</li>";
             } ?>
         </ul>
 
