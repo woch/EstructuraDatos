@@ -91,7 +91,7 @@
 		        
             }
 
-            var_dump($Datos);
+            //var_dump($Datos);
     ?>
 <head>
     <meta charset="UTF-8">
